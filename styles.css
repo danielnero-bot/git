@@ -47,7 +47,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 .input-group > input:focus + label,
 .input-group > input:valid + label {
-  transform: translateY(-30px) scale(0.9);
+  transform: translateY(-24px) scale(0.9);
   font-size: 0.95em;
 }
 .input-group > input:not(:focus):not(:valid) + label {
