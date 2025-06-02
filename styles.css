@@ -24,7 +24,6 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 .input-group {
   margin: 1rem 0;
-  padding: 1rem 0 0 0;
   position: relative;
 }
 .input-group > input {
@@ -32,7 +31,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 .input-group > label {
   position: absolute;
-  left: 10px;
+  left: 0px;
   top: 12px;
   font-weight: bold;
   color: #888;
@@ -43,7 +42,6 @@ input[type="text"]:focus, input[type="password"]:focus {
     color 0.3s,
     padding-bottom 0.3s;
   background: #fff;
-  padding: 0 4px;
 }
 .input-group > input:focus + label,
 .input-group > input:valid + label {
