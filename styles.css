@@ -3,157 +3,94 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-image: url("./images/pexels-pixabay-268533.jpg");
-  background-repeat: no-repeat;
+body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  animation: gradientBG 15s ease infinite;
-  overflow: hidden;
+  min-height: 100vh;
 }
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.container{
+  width: 20%;
 }
-.container {
-  position: relative;
-  width: 400px;
-  padding: 2rem;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  overflow: hidden;
-}
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
+input[type="text"], input[type="password"] {
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: rgba(255, 255, 255, 0.05);
-  transform: skewX(-15deg);
-  transition: 0.5s;
-  pointer-events: none;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
 }
-.container:hover::before {
-  left: 120%;
-}
-.container h1 {
-  font-size: 2.5rem;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 3rem;
+input[type="text"]:focus, input[type="password"]:focus {
+  border-bottom: 2px solid #007bff;
 }
 .input-group {
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   position: relative;
 }
 .input-group > input {
-  width: 100%;
-  padding: 1rem;
-  padding-left: 1.5rem;
-  border: none;
-  outline: none;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-size: 1.2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: transparent;
 }
-.input-group > input::placeholder {
-  color: #fff;
-}
-.input-group > input:focus {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 .input-group > label {
-  display: block;
   position: absolute;
-  top: 33%;
-  left: 20px;
+  left: 10px;
+  top: 12px;
+  font-weight: bold;
+  color: #888;
   pointer-events: none;
-  transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.8);
+  transition: 
+    transform 0.3s ease-in-out,
+    font-size 0.3s ease-in-out,
+    color 0.3s,
+    padding-bottom 0.3s;
+  background: #fff;
+  padding: 0 4px;
 }
 .input-group > input:focus + label,
 .input-group > input:valid + label {
-  font-size: 1rem;
-  top: -10px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 2px 8px;
-  border-radius: 10px;
-  left: 15px;
+  transform: translateY(-24px) scale(0.9);
+  font-size: 0.95em;
+  padding-bottom: 10px;
 }
-.remember {
+.input-group > input:not(:focus):not(:valid) + label {
+  padding-bottom: 0;
+  color: #888;
+}
+.remember{
   display: flex;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
 }
-.remember > label {
-  cursor: pointer;
+.remember input[type="checkbox"] {
+  margin-right: 10px;
+}
+.remember label {
+  font-size: 0.9em;
+  color: #555;
   margin-right: auto;
 }
-.remember > input {
-  margin-right: 10px;
-  accent-color: #fff;
-}
-.remember > a {
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-.remember > a:hover {
-  text-decoration: underline;
-}
-button {
+.login-button{
   width: 100%;
-  padding: 0.7rem;
-  border: none;
-  outline: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  background: rgba(255, 255, 255, 0.3);
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  margin-top: 1rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-button:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
 }
 .register-link {
   text-align: center;
-  margin-top: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
+  margin-top: 1rem;
 }
-.register-link > a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.register-link > a:hover {
-  text-decoration: underline;
+@media screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+  input[type="text"], input[type="password"] {
+    font-size: 0.9em;
+  }
+  .login-button {
+    font-size: 0.9em;
+  }
+  .input-group > label {
+    font-size: 0.85em;
+  }
+  
 }
